@@ -1,10 +1,10 @@
-``cmake_multi`` generator
+``cmake_multi`` Generator
 =========================
 
 
-``cmake_multi`` generator is intended for CMake multi-configuration environments, like Visual Studio and Xcode IDEs that do not configure for a specific
+The ``cmake_multi`` generator is intended for CMake multi-configuration environments, like Visual Studio and Xcode IDEs that are not configured for a specific
 ``build_type``, like Debug or Release, but rather can be used for both and switch among Debug and Release configurations with a combo box or similar control.
-The project configuration for cmake is different, in multi-configuration environments, the flow would be:
+The project configuration for cmake is different, in multi-configuration environments, according to this flow:
 
 .. code-block:: bash
 
@@ -22,7 +22,7 @@ While in single-configuration environments (Unix Makefiles, etc):
 
 The ``CMAKE_BUILD_TYPE`` default, if not specified is ``Debug``.
 
-With the regular conan ``cmake`` generator, only 1 configuration at a time can be managed. Then,
+With the regular Conan ``cmake`` generator, only a single configuration can be managed at a time. Then,
 it is a universal, homogeneous solution for all environments.
 This is the recommended way, using the regular ``cmake`` generator, and just go to the command line and
 switch among configurations:
@@ -49,13 +49,13 @@ and ``conanbuildinfo_multi.cmake``, which includes the other two, and enables it
 .. warning::
 
     The ``cmake_multi`` generator is designed as a helper for consumers, but not for creating packages.
-    If you also want to create a package, see :ref:`Creating packages<cmake_multi_creating_packages>` section.
+    If you also want to create a package, see the :ref:`Creating packages<cmake_multi_creating_packages>` section.
 
 
-Global variables approach
+Global Variable Approach
 ----------------------------
 
-The consumer project might write a ``CMakeLists.txt`` like:
+The consumer project might write a ``CMakeLists.txt`` as follows:
 
 .. code-block:: cmake
 
@@ -74,10 +74,10 @@ The consumer project might write a ``CMakeLists.txt`` like:
     endforeach()
 
 
-Targets approach
+Targets Approach
 -----------------
 
-Or, if using the modern cmake syntax with targets (where ``Hello1`` is an example package name that the executable ``say_hello`` depends on):
+Or alternately, when using the modern cmake syntax with targets (where ``Hello1`` is an example package name that the executable ``say_hello`` depends on):
 
 .. code-block:: cmake
 
@@ -90,7 +90,7 @@ Or, if using the modern cmake syntax with targets (where ``Hello1`` is an exampl
     add_executable(say_hello main.cpp)
     target_link_libraries(say_hello CONAN_PKG::Hello1)
 
-There's also a convenient macro for linking to all libraries:
+There is also a convenient macro for linking to all libraries:
 
 .. code-block:: cmake
 
@@ -116,7 +116,7 @@ configurations, building the project, or from the command line:
 
 .. _cmake_multi_creating_packages:
 
-Creating packages
+Creating Packages
 -----------------
 
 The ``cmake_multi`` generator is just for consumption. It cannot be used to create packages. If you

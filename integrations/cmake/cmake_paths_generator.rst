@@ -1,6 +1,6 @@
 .. _cmake_paths_generator:
 
-``cmake_paths`` generator
+``cmake_paths`` Generator
 =========================
 
 This generator is especially useful if you are using ``CMake`` based only on the ``find_package``
@@ -67,8 +67,8 @@ Without modifying your **CMakeLists.txt** file you can use the ``conan_paths.cma
 Included using the CMAKE_PROJECT_<PROJECT-NAME>_INCLUDE
 -------------------------------------------------------
 
-With ``CMAKE_PROJECT_<PROJECT-NAME>_INCLUDE`` you can specify a file to be included by the project() command.
-If you already have a toolchain file you can use this variable to include the ``conan_paths.cmake``
+The ``CMAKE_PROJECT_<PROJECT-NAME>_INCLUDE`` lets you specify a file to be included by the project() command.
+If you already have a toolchain file, you can use this variable to include the ``conan_paths.cmake``
 and insert your toolchain with the ``CMAKE_TOOLCHAIN_FILE``.
 
 .. code-block:: bash

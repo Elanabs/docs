@@ -2,7 +2,7 @@
 .. _cmake_find_package_generator:
 
 
-``cmake_find_package`` generator
+``cmake_find_package`` Generator
 ================================
 
 This generator is especially useful if you are using ``CMake`` using the ``find_package``
@@ -15,7 +15,7 @@ The name of the files follows the pattern ``Find<package_name>.cmake``. So for t
 a ``Findzlib.cmake`` file will be generated.
 
 
-In a conanfile.py
+conanfile.py Contents
 -----------------
 
 
@@ -36,10 +36,10 @@ In a conanfile.py
            cmake.configure()
            cmake.build()
 
-In the previous example, the ``CMake`` build helper will adjust automatically the ``CMAKE_MODULE_PATH`` to the
-``conanfile.install_folder``, where the generated ``Find<package_name>.cmake`` are.
+In the previous example, the ``CMake`` build helper will automatically adjust the ``CMAKE_MODULE_PATH`` to the
+``conanfile.install_folder``, where the generated ``Find<package_name>.cmake`` is located.
 
-In the ``CMakeList.txt`` you do not need to specify or include anything related with Conan at all, just
+In the ``CMakeList.txt`` file you do not need to specify or include anything related to Conan at all, as you can
 rely on the ``find_package`` feature:
 
 .. code-block:: cmake
@@ -76,12 +76,12 @@ rely on the ``find_package`` feature:
 
 
 
-In a conanfile.txt
-------------------
+conanfile.txt Contents
+----------------------
 
-If you are using a ``conanfile.txt`` file in your project, instead of a ``conanfile.py``, this generator
-can be used together with the :ref:`cmake_paths <cmake_paths_generator>` generator to adjust the ``CMAKE_MODULE_PATH`` variable automatically
-and let CMake to locate the generated ``Find<package_name>.cmake`` files.
+If you are using a ``conanfile.txt`` file in your project, instead of a ``conanfile.py``, you can use this generator
+together with the :ref:`cmake_paths <cmake_paths_generator>` generator to adjust the ``CMAKE_MODULE_PATH`` variable automatically
+and let CMake locate the generated ``Find<package_name>.cmake`` files.
 
 
 With **cmake_paths**:
